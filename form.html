@@ -203,6 +203,7 @@
         let currentMethod = 'POST'; // Default method
 
 updateBtn.addEventListener('click', () => {
+    adminForm.action = `https://delivery-e1lhk908w-michaels-projects-4f22faee.vercel.app/update/${itemId}`;
     currentMethod = 'PATCH'; // Change method to PATCH for update
     formContainer.style.display = 'block'; // Show the form
 });
