@@ -199,6 +199,39 @@ app.post('/update', (req, res) => {
 //     doc.end();
 // });
 
+app.post('/track', (req, res) => {
+  const { trackingCode } = req.body;
+  const dataFilePath = path.join(__dirname, '..', 'formData.json');
+
+  fs.readFile(dataFilePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading data file:', err);
+          return res.status(500).send('Error reading data');
+      }
+
+      let formData;
+      try {
+          formData = JSON.parse(data);
+      } catch (parseErr) {
+          console.error('Error parsing data:', parseErr);
+          return res.status(500).send('Error parsing data');
+      }
+
+      // Search for the item with the matching carrierreferenceno
+      const foundItem = formData.find(item => item.carrierreferenceno === trackingCode);
+
+      if (foundItem) {
+          // Render the EJS template with the found item
+          res.render('index', { formData: foundItem , buttontext:"Download Receipt" , map:foundItem.currentlocation ,height:"450" ,current:'Current Location' , imgtext:'Package Image' ,packimg:foundItem.packageimage});
+      } else {
+          return res.status(404).send('Item not found');
+      }
+  });
+});
+
+
+
+
 
 app.get('/track:itemId', (req, res) => {
   const trackingCode = req.params.itemId; // Assuming trackingCode is passed as a query parameter
