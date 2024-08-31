@@ -195,7 +195,7 @@
         const submitBtn = document.getElementById('submitBtn');
 
         createBtn.addEventListener('click', () => {
-            adminForm.action = 'https://delivery-e1lhk908w-michaels-projects-4f22faee.vercel.app/insert';
+            adminForm.action = '/insert';
             adminForm.method = 'POST';
             formContainer.style.display = 'block';
         });
@@ -203,7 +203,7 @@
         let currentMethod = 'POST'; // Default method
 
 updateBtn.addEventListener('click', () => {
-    adminForm.action = `https://delivery-e1lhk908w-michaels-projects-4f22faee.vercel.app/update/${itemId}`;
+    adminForm.action = `/update/${itemId}`;
     currentMethod = 'PATCH'; // Change method to PATCH for update
     formContainer.style.display = 'block'; // Show the form
 });
@@ -233,9 +233,9 @@ adminForm.addEventListener('submit', function (event) {
     let url = '';
 
     if (currentMethod === 'POST') {
-        url = 'https://delivery-e1lhk908w-michaels-projects-4f22faee.vercel.app/insert';
+        url ='/insert';
     } else if (currentMethod === 'PATCH') {
-        url = `https://delivery-e1lhk908w-michaels-projects-4f22faee.vercel.app/update/${itemId}`;
+        url = `/update/${itemId}`;
     } else if (currentMethod === 'DELETE') {
         url = `/delete/${itemId}`;
     }
