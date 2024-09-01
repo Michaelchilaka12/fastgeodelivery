@@ -269,7 +269,7 @@ app.get('/track:itemId', (req, res) => {
 app.get('/download-pdf:itemId', (req, res) => {
   const itemId = req.params.itemId
   
-  const url = `https://delivery-e1lhk908w-michaels-projects-4f22faee.vercel.app/track${itemId}`;
+  const url = `https://fastgeodelivery.onrender.com/track${itemId}`;
 
   exec(`wkhtmltopdf ${url} Receipt.pdf`, (error, stdout, stderr) => {
     if (error) {
