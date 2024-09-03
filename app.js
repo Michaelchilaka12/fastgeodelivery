@@ -314,7 +314,7 @@ app.post('/check',(req,res)=>{
   if(email === "michaelchineduchilaka@gmail.com" && password ==="michael@12"){
     res.sendFile(path.join(__dirname, 'form.html'));
   }else{
-    res.send("YOU ARE NOT A QUALIFIED ADMIN)
+    res.send("YOU ARE NOT A QUALIFIED ADMIN")
   }
 })
 app.get('/', (req, res) => {
