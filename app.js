@@ -303,12 +303,22 @@ const upload = multer({
 
 // Serve the HTML file
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, 'form.html'));
+  res.sendFile(path.join(__dirname, 'loginform.html'));
 });
 
+app.post('/check',(req,res)=>{
+   const username = reg.body["username"];
+  const email = reg.body["email"];
+  const password = reg.body["password"];
 
+  if(email === "michaelchineduchilaka@gmail.com" && password ==="michael@12"){
+    res.sendFile(path.join(__dirname, 'form.html'));
+  }else{
+    res.send("YOU ARE NOT A QUALIFIED ADMIN)
+  }
+})
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'form.html'));
+  res.sendFile(path.join(__dirname, 'loginform.html'));
 });
 
 
