@@ -307,9 +307,9 @@ app.get('/admin', (req, res) => {
 });
 
 app.post('/check',(req,res)=>{
-   const username = reg.body["username"];
-  const email = reg.body["email"];
-  const password = reg.body["password"];
+   const username = req.body["username"];
+  const email = req.body["email"];
+  const password = req.body["password"];
 
   if(email === "michaelchineduchilaka@gmail.com" && password ==="michael@12"){
     res.sendFile(path.join(__dirname, 'form.html'));
