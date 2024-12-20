@@ -67,11 +67,11 @@
     "receiversaddress": "aba",
     "receiversphone": "08114246540",
     "receiversemail": "mikeegan309@gmail.com",
-    "shipmentstatus": "moving",
+    "shipmentstatus": "Pending Clearance",
     "origin": "UK",
     "packages": "flower",
     "destination": "uk",
-    "currentlocation": "surulere",
+    "currentlocation": "London",
     "carrier": "mike carrier",
     "typeofshipment": "road",
     "weight": "2kg",
@@ -84,7 +84,7 @@
     "expecteddeliverydate": "2024-08-28",
     "departuredate": "2024-08-26",
     "deliverytime": "11:30",
-    "packageimage": {}
+    "packageimage": "https://fastgeotracking.online/uploads/CC-06-508367.png"
   },
   {
     "itemId": "111",
